@@ -1,11 +1,13 @@
-import NextAuth from 'next-auth';
+// src/lib/authOptions.ts
+
+import { AuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { prisma } from '@/lib/Prisma';
 import { compare } from 'bcrypt';
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
@@ -34,9 +36,6 @@ export const authOptions = {
       },
     }),
   ],
-  session: { strategy: 'jwt' as const },
+  session: { strategy: 'jwt' },
   secret: process.env.NEXTAUTH_SECRET,
 };
-
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
