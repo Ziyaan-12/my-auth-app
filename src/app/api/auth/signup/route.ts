@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/Prisma';
 import { hash } from 'bcrypt';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
-
 export async function POST(request: Request) {
   const body = await request.json();
   const { email, password } = body;
