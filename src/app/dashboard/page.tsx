@@ -63,9 +63,9 @@ export default async function DashboardPage() {
 
           <Section title="Recent Activity">
             <ul className="space-y-3 text-sm">
-              <Activity message="✅ You logged in with Google" />
-              <Activity message="📁 You created a new project" />
-              <Activity message="🔧 You updated your profile settings" />
+              <Activity message=" You logged in with Google" />
+              <Activity message=" You created a new project" />
+              <Activity message=" You updated your profile settings" />
             </ul>
           </Section>
         </main>
