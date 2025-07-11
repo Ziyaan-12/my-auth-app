@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/authOption';
+import { authOptions } from '@/data/authOption';
 
 import { redirect } from 'next/navigation';
 import { LogOut, LayoutDashboard, FolderKanban, Users, Settings } from 'lucide-react';
